@@ -1,4 +1,4 @@
-const animalGrid = document.getElementById("animal-grid");
+const animalsGrid = document.getElementById("animals-grid");
 const animalTemplate = document.getElementById("animal-template").content;
 
 const vaccination = document.getElementById('vaccination');
@@ -7,8 +7,8 @@ const chip = document.getElementById('chip');
 const sorting = document.getElementById('sorting');
 
 async function getAnimals() {
-    while (animalGrid.firstChild) {
-        animalGrid.removeChild(animalGrid.firstChild);
+    while (animalsGrid.firstChild) {
+        animalsGrid.removeChild(animalsGrid.firstChild);
     }
 
     let url = "/api/animals";
@@ -47,7 +47,7 @@ async function getAnimals() {
                 animal_a_2.setAttribute("href", animalHref);
                 animal_a_2.textContent = animalName;
             }
-            animalGrid.appendChild(animalClone);
+            animalsGrid.appendChild(animalClone);
         });
     }
 }
