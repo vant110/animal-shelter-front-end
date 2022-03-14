@@ -1,0 +1,22 @@
+{
+  "name": "animal-shelter",
+  "version": "1.0.0",
+  "description": "Проект по курсу Технологии сети Интернет. Тема проекта: сайт-каталог приюта для животных.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vant110/animal-shelter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vant110/animal-shelter/issues"
+  },
+  "homepage": "https://github.com/vant110/animal-shelter#readme",
+  "dependencies": {
+    "reseter.css": "^2.0.0"
+  }
+}

@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+$green: #090;
+$gray-1: #333;
+//$gray-2: #4F4F4F;
+$gray-3: #828282;
+$gray-4: #BDBDBD;
+$gray-5: #EEE;
+$gray-6: #F2F2F2;
+
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+
+$px18: 18px;
+$px22: 22px;
+$px26: 26px;
+
+%multiline-text {
+	text-align: justify;
+	line-height: 1.75;
+}
+
+html {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: $regular;
+	font-size: $px18;
+}
+body {
+	background-color: white;
+	color: $gray-1;
+}
+
+a {
+	text-decoration: none;
+	white-space: nowrap;
+}
+
+h1, h2 {
+	font-weight: $semi-bold;
+	color: $gray-1;
+}
+h1 {	
+	font-size: $px26;
+	margin: .67rem 0;
+}
+h2 {
+	font-size: $px22;
+	margin: .5rem 0;
+}
+
+ul, ol {
+	list-style-position: inside;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+button, input, select, textarea {
+	font-family: inherit;
+	font-size: 100%;
+}
+textarea {
+	resize: vertical;
+}
+
+article {
+	padding-bottom: 3rem;
+}
+
+.font {
+	&_weight{
+		&_light {
+			font-weight: $light;
+		}
+		&_regular { // по умолчанию 									
+			font-weight: $regular;
+		}
+		&_medium {
+			font-weight: $medium;
+		}
+		&_semi-bold {
+			font-weight: $semi-bold;
+		}
+	}
+
+	&_size {
+		&_18 { // по умолчанию						
+			font-size: $px18;
+		}
+		&_22 {
+			font-size: $px22;
+		}
+		&_26 {
+			font-size: $px26;
+		}	
+	}
+
+	&_transform {
+		&_uppercase {
+			text-transform: uppercase;
+		}
+	}
+}
+
+.flex {
+	display: flex;
+
+	&_flex-direction {
+		&_column {
+			flex-direction: column;
+		}
+	}
+
+	&_justify-content {
+		&_space-around {
+			justify-content: space-around;
+		}
+		&_space-between {
+			justify-content: space-between;
+		}
+		&_flex-end {
+			justify-content: flex-end;
+		}
+	}
+
+	&_align-items {
+		&_center {
+			align-items: center;
+		}
+		&_flex-start {
+			align-items: flex-start;
+		}
+	}
+}
+
+.page {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	&__header {
+		width: 100%;
+		height: 50px;
+		background-color: $green;
+		position: sticky;
+		top: 0;
+		z-index: 10;
+
+		a {
+			&:any-link {
+				color: white;
+			}
+			&:hover, &:active {
+				color: $gray-5;
+			}
+		}
+	}
+
+	&__main {
+		flex-grow: 1;
+	}
+	
+	&__footer {
+		width: 100%;
+		height: 80px;
+		background-color: $gray-6;
+		color: $gray-3;
+		font-weight: $light;
+		z-index: 9;
+
+		a {
+			&:any-link {
+				color: $gray-3;
+			}
+			&:hover, &:active {
+				color: $gray-1;
+			}
+		}
+	}
+}
+
+.center {
+	width: 1170px;
+	min-width: 1170px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.header-links {
+	width: 670px;
+}
+
+// Главная страница
+.homepage-categories {
+	height: 80px;
+
+	&__links {
+		width: 470px;
+		height: 100%;
+	}
+
+	a {
+		&:any-link {
+			color: $gray-1;
+		}
+		&:hover, &:active {
+			color: $green;
+		}
+	}
+}
+
+.homepage-video {
+	width: 100%;
+	min-width: 1170px;
+	float: left;
+}
+
+// Другие страницы
+.navigation-chain {
+	height: 80px;
+
+	div+div::before {
+		content: "\2013";
+		margin: 0 .8rem;
+		color: $gray-3;
+	}
+
+	a {
+		&:any-link {
+			color: $gray-3;
+		}
+		&:hover, &:active {
+			color: $gray-1;
+		}
+	}
+
+	div:last-child a {
+		pointer-events: none;
+		cursor: default;
+	}
+}
+
+// Питомцы
+.animals-categories {
+	width: 300px;
+	height: 150px;
+
+	a {
+		&:any-link {
+			color: $gray-1;
+		}
+		&:hover, &:active {
+			color: $green;
+		}
+	}
+}
+
+.animals-flags {
+	width: 300px;
+	height: 150px;
+	user-select: none;
+
+	input {
+		margin-right: 5px;
+	}
+}
+
+.animals-view {
+	height: 50px;
+	margin-bottom: 15px;
+}
+
+.animals-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 30px;
+	padding-bottom: 3rem;
+
+	&__animal {
+		width: 270px;
+		height: 340px;
+	}
+
+	&__image-link {
+		width: 100%;
+		height: 270px;		
+		display: block;
+	}
+
+	&__name {
+		height: 70px;		
+
+		a {
+			&:any-link {
+				color: black;
+			}
+			&:hover, &:active {
+				color: black;
+			}
+		}
+	}
+}
+
+// Питомец
+.animal {
+	.slideshow-container {
+		margin-right: 130px;
+		margin-bottom: 15px;
+	
+		#slide {
+			position: relative;
+
+			.prev, .next {
+				cursor: pointer;
+				position: absolute;
+				top: 50%;
+				width: auto;
+				margin-top: -22px;
+				padding: 16px;
+				color: white;
+				font-weight: bold;
+				font-size: 18px;
+				transition: 0.6s ease;
+				border-radius: 0 3px 3px 0;
+				user-select: none;
+				right: auto;
+		
+				&:hover {
+					background-color: rgba(0,0,0,0.8);
+				}
+			}
+			
+			.prev {
+				left: 0;
+			}
+
+			.next {
+				right: 0;
+				border-radius: 3px 0 0 3px;
+			}
+		}
+				
+		.dot {
+			cursor: pointer;
+			height: 15px;
+			width: 15px;
+			margin: 0 2px;
+			background-color: #bbb;
+			border-radius: 50%;
+			display: inline-block;
+			transition: background-color 0.6s ease;
+		}
+		  
+		.active, .dot:hover {
+			background-color: #717171;
+		}
+	}
+
+	&__image {
+		width: 470px;
+		height: 470px;
+		cursor: pointer;
+		transition: 0.3s;
+
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	
+	&__table {	
+		width: 570px;
+		height: 200px;
+		table-layout: fixed;
+		border-collapse: collapse;
+		
+		td:nth-child(1) {
+			width: 400px;
+			color: $gray-3;
+			white-space: nowrap;
+			overflow: hidden;		
+	
+			span {
+				&::after {
+					content: '. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .';
+				}
+			}
+		}
+		td:nth-child(2) {
+			color: $gray-1;
+			padding-left: 1px;
+		}
+	}
+
+	&__about {
+		@extend %multiline-text;
+	}
+}
+
+// Статьи
+.articles {
+	display: flex;
+	flex-direction: column;	
+
+	&__intro {
+		color: $gray-3;
+	}
+
+	&__hr {
+		margin-bottom: 2.25rem;
+		border: 1px solid $gray-5;
+	}
+}
+
+// Статья
+.article {
+	p, li, h2 {	
+		@extend %multiline-text;
+	}
+}
+
+// Добавление питомца
+.input-error {
+	border-color: red;
+}
+.message-error {
+	color: red;
+	font-size: 0.8rem;		
+	text-align: justify;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+form {
+	$label-width: 240px;
+	
+	width: 700px;
+	margin: 0 auto;
+	padding-bottom: 3rem;
+
+	h1 {
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	div {
+		min-height: 45px;
+	}	
+	label {
+		display: inline-block;
+		text-align: right;
+		width: $label-width;
+		color: $gray-3;
+	}
+
+	select, input, button {		
+		height: 30px;
+	}
+	select, input, textarea {
+		width: calc(100% - 240px - 25px); //$label-width
+	}
+	input[type="checkbox"] {
+		height: 20px;
+		width : 20px;
+		margin-left: 25px;
+	}
+	input[type="text"], input[type="tel"], input[type="email"], textarea {		
+		padding: 2px 4px;
+	}
+	input[type="date"], input[type="number"] {
+		padding-left: 4px;
+	}
+	select, input, textarea {
+		margin-left: 20px;
+	}
+	textarea {
+		min-height: 106px;
+		max-height: 306px;
+
+		&+p {
+			margin-bottom: 15px;		
+		}
+	}	
+	p, button {
+		margin-left: $label-width + 25px;
+	}	
+
+	.last-checkbox {
+		min-height: 35px;
+	}
+
+	.required::after {
+		content: " *";
+		color: red;
+	}
+}
+
+#scroll-to-top-button {
+    display: none;
+	position: fixed;
+    height: 100%;
+    width: 60px;
+    padding: 0;
+	border: 0;
+    background-color: inherit;
+    transition: background-color .3s ease;
+    cursor: pointer;
+
+	&:hover {
+		background-color: $gray-6;
+
+		span {
+			background-color: $gray-4;
+		}
+	}
+
+	span {
+		background-color: rgba(48,59,68,.2);
+		border-radius: 50%;
+		color: white;
+		height: 32px;
+		padding: 4px;
+		width: 32px;
+		display: inline-block;
+
+		svg {
+			display: block;
+			height: 100%;
+			width: 100%;
+
+			fill: currentColor;
+			overflow: hidden;
+			stroke: inherit;
+		}
+	}
+}
+
+#modal {
+	display: none;
+	position: fixed;
+	z-index: 20;
+	width: 100%;
+	height: 100%;
+	padding: 15px;
+	background-color: rgba(0,0,0,0.9);
+
+	&__image {
+		//margin: auto;
+		object-fit: contain;
+		animation-name: zoom;
+		animation-duration: 0.6s;
+	}
+
+	@keyframes zoom {
+		from {transform:scale(0)}
+		to {transform:scale(1)}
+	}
+
+	&__close {
+		position: fixed;
+		top: 15px;
+		right: 35px;
+		color: #f1f1f1;
+		font-size: 3.5rem;
+		font-weight: $medium;
+		transition: 0.3s;
+
+		&:hover, &:focus {
+			color: #bbb;
+			text-decoration: none;
+			cursor: pointer;
+		}
+	}
+}
+  
