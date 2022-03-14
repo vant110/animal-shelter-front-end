@@ -103,10 +103,11 @@ function emailError(input, message) {
 //#endregion
 
 //#region form
-const form = document.getElementsByTagName('form')[0];
-form.addEventListener('submit', function (event) {
+const form = document.forms["animal"];
+form.addEventListener('submit', async e => {
     const inputs = Array.from(form.getElementsByTagName("input"));
     inputs.push(document.getElementById("about"));
+    let valid = true;
     for (const input of inputs) {
         const message = document.getElementById(`${input.id}-error`);
         switch (input.id) {
@@ -144,7 +145,24 @@ form.addEventListener('submit', function (event) {
                 break;
         }
         if (!input.validity.valid) {
-            event.preventDefault();
+            e.preventDefault();
+            valid = false;        
+        }
+    }
+    if (valid) {
+        e.preventDefault();
+        const formData = new FormData(form);
+        try {
+            const response = await fetch("/api/animals", {
+                method: 'POST',
+                cache: "no-store",              
+                body: formData
+            });
+            const result = await response.json();
+            console.log(JSON.stringify(result));
+            alert(result["message"]);
+        } catch (error) {
+            console.error(error);
         }
     }
 });

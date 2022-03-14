@@ -30,65 +30,53 @@
             <div><a href="/pages/add-animal.html">Добавление питомца</a></div>
 		</nav>
         <div class="center">
-            <form action="" method="get" enctype="multipart/form-data" novalidate>
+            <form name="animal" novalidate>
                 <h1>Добавление питомца</h1>
                 <div>
-                    <label for="type">Вид</label>
-                    <select id="type" name="type">
-                        <option value="cat">Кошка</option>
-                        <option value="dog">Собака</option>
-                        <option value="other">Другое животное</option>
+                    <label for="species-id">Вид</label>
+                    <select name="speciesId" id="species-id">
+                        <option value="1">Кошка</option>
+                        <option value="2">Собака</option>
+                        <option value="0">Другое животное</option>
                     </select>
                 </div>              
                 <div>
                     <label class="required" for="name">Имя</label>
-                    <input type="text" id="name" name="name" placeholder="Имя" required minlength="2" maxlength="18" pattern="^[А-Я][а-я]+$">
+                    <input type="text" name="name" placeholder="Имя" required minlength="2" maxlength="18" pattern="^[А-Я][а-я]+$" id="name">
                     <p id="name-error" aria-live="polite"></p>
                 </div>
                 <div>
                     <label class="required" for="birth-year">Год рождения</label>
-                    <input type="number" id="birth-year" name="birth-year" placeholder="Год рождения" required min="2000">
+                    <input type="number" name="birthYear" placeholder="Год рождения" required min="2000" id="birth-year">
                     <p id="birth-year-error" aria-live="polite"></p>
                 </div>
                 <div>
                     <label class="required" for="arrival-date">Дата прибытия в приют</label>
-                    <input type="date" id="arrival-date" name="arrival-date" required min="2000-01-01">
+                    <input type="date" name="arrivalDate" required min="2000-01-01" id="arrival-date">
                     <p id="arrival-date-error" aria-live="polite"></p>
                 </div>
                 <div class="flex">
                     <label for="vaccination">Прививки</label>
-                    <input type="checkbox" id="vaccination" name="vaccination">
+                    <input type="checkbox" name="vaccinationStatus" id="vaccination">
                 </div>
                 <div class="flex">
                     <label for="sterilization">Стерилизация</label>
-                    <input type="checkbox" id="sterilization" name="sterilization">
+                    <input type="checkbox" name="sterilizationStatus" id="sterilization">
                 </div>
                 <div class="last-checkbox flex">
                     <label for="chip">Чип</label>
-                    <input type="checkbox" id="chip" name="chip">
+                    <input type="checkbox" name="chipStatus" id="chip">
                 </div>
                 <div>
                     <label class="required" for="image">Изображение</label>
-                    <input type="file" id="image" name="image" required accept="image/jpeg">
+                    <input type="file" name="image" required accept="image/jpeg" id="image">
                     <p id="image-error" aria-live="polite"></p>
                 </div>
                 <div>
                     <label class="required" for="about">О питомце</label>
-                    <textarea id="about" name="about" placeholder="О питомце" rows="5" required minlength="30"></textarea>
+                    <textarea name="description" placeholder="О питомце" rows="5" required minlength="30" id="about"></textarea>
                     <p id="about-error" aria-live="polite"></p>
                 </div>
-                <!--
-                <div>
-                    <label for="tel">Телефон</label>
-                    <input type="tel" id="tel" name="tel" placeholder="8XXXXXXXXXX" minlength="11" maxlength="16" pattern="^(\+7|8)[ \-\(]?\d{3}[ \-\)]?\d{3}[ \-]?\d{2}[ \-]?\d{2}$">
-                    <p id="tel-error" aria-live="polite"></p>
-                </div>
-                <div>
-                    <label for="email">Электронная почта</label>
-                    <input type="email" id="email" name="email" placeholder="email@mail.ru" minlength="5" maxlength="64" pattern="^.+@.+\..+$">
-                    <p id="email-error" aria-live="polite"></p>
-                </div>
-                -->
                 <button type="submit">Добавить</button>
             </form>
         </div>
