@@ -51,10 +51,9 @@ async function getAnimals() {
         });
     }
 }
+getAnimals();
 
 vaccination.addEventListener('change', () => getAnimals());
 sterilization.addEventListener('change', () => getAnimals());
 chip.addEventListener('change', () => getAnimals());
 sorting.addEventListener('change', () => getAnimals());
-
-getAnimals();

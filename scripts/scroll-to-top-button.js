@@ -8,8 +8,8 @@ function onScrollOrResize() {
         button.style.display = "none";
     }
 }
-window.onscroll = onScrollOrResize;
-window.onresize = onScrollOrResize;
+window.addEventListener("scroll", () => onScrollOrResize());
+window.addEventListener("scroll", () => onScrollOrResize());
 
 button.onclick = function () {
     document.documentElement.scrollTop = 0;
