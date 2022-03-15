@@ -24,6 +24,9 @@ a {
 h1, h2 {
   font-weight: 600;
   color: #333;
+  white-space: normal;
+  text-align: justify;
+  line-height: 1.5;
 }
 
 h1 {
@@ -366,15 +369,10 @@ article {
   color: #828282;
 }
 .articles__hr {
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
   border: 1px solid #EEE;
 }
 
-.article h1 {
-  white-space: normal;
-  text-align: justify;
-  line-height: 1.5;
-}
 .input-error {
   border-color: red;
 }

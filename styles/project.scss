@@ -40,6 +40,9 @@ a {
 h1, h2 {
 	font-weight: $semi-bold;
 	color: $gray-1;
+	white-space: normal;
+	text-align: justify;
+	line-height: 1.5;
 }
 h1 {	
 	font-size: $px26;
@@ -409,19 +412,13 @@ article {
 	}
 
 	&__hr {
-		margin-bottom: 2.25rem;
+		margin-bottom: 2rem;
 		border: 1px solid $gray-5;
 	}
 }
 
 // Статья
-.article {	
-	h1 {
-		white-space: normal;
-		text-align: justify;
-		line-height: 1.5;
-	}
-
+.article {
 	p, li, h2 {	
 		@extend %multiline-text;
 	}
