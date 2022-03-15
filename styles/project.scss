@@ -415,7 +415,13 @@ article {
 }
 
 // Статья
-.article {
+.article {	
+	h1 {
+		white-space: normal;
+		text-align: justify;
+		line-height: 1.5;
+	}
+
 	p, li, h2 {	
 		@extend %multiline-text;
 	}

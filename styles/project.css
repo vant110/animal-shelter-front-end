@@ -370,6 +370,11 @@ article {
   border: 1px solid #EEE;
 }
 
+.article h1 {
+  white-space: normal;
+  text-align: justify;
+  line-height: 1.5;
+}
 .input-error {
   border-color: red;
 }
